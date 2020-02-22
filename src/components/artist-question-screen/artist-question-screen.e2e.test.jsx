@@ -47,7 +47,7 @@ it(`Click on user answer should pass to the callback data-object from which this
     question={question}
   />);
 
-  const answerInputs = screen.find(`input`);
+  const answerInputs = screen.find(`input.artist__input`);
   const answerOne = answerInputs.at(0);
 
   answerOne.simulate(`change`, mockEvent);

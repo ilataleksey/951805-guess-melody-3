@@ -38,7 +38,7 @@ it(`When user answers genre question form is not sent`, () => {
     question={question}
   />);
 
-  const form = genreQuestion.find(`form`);
+  const form = genreQuestion.find(`form.game__tracks`);
   const formSendPrevention = jest.fn();
   form.simulate(`submit`, {
     preventDefault: formSendPrevention,
@@ -58,8 +58,8 @@ it(`User answer passed to callback is consistent with "userAnswer" prop`, () => 
     question={question}
   />);
 
-  const form = genreQuestion.find(`form`);
-  const inputTwo = genreQuestion.find(`input`).at(1);
+  const form = genreQuestion.find(`form.game__tracks`);
+  const inputTwo = genreQuestion.find(`input.game__input`).at(1);
 
   inputTwo.simulate(`change`, {target: {checked: true}});
   form.simulate(`submit`, {preventDefault() {}});
@@ -70,6 +70,6 @@ it(`User answer passed to callback is consistent with "userAnswer" prop`, () => 
   expect(onAnswer.mock.calls[0][1]).toMatchObject(userAnswer);
 
   expect(
-      genreQuestion.find(`input`).map((it) => it.prop(`checked`))
+      genreQuestion.find(`input.game__input`).map((it) => it.prop(`checked`))
   ).toEqual(userAnswer);
 });
