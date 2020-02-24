@@ -3,51 +3,28 @@ import {configure, shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 import ArtistQuestionScreen from "./artist-question-screen.jsx";
+import question from "./artist-question-screen.test.mocks.js";
 
 configure({adapter: new Adapter()});
-
-const mock = {
-  question: {
-    type: `artist`,
-    song: {
-      artist: ``,
-      src: ``
-    },
-    answers: [
-      {
-        artist: `one`,
-        picture: `pic-one`,
-      },
-      {
-        artist: `two`,
-        picture: `pic-two`,
-      },
-      {
-        artist: `three`,
-        picture: `pic-three`,
-      },
-    ],
-  }
-};
 
 const mockEvent = {
   preventDefault() {}
 };
 
 it(`Click on user answer should pass to the callback data-object from which this answer was created`, () => {
-  const {question} = mock;
   const onAnswer = jest.fn();
   const userAnswer = {
-    artist: `one`,
-    picture: `pic-one`,
+    artist: `John Snow`,
+    picture: `https://api.adorable.io/avatars/128/0`,
   };
 
   const screen = shallow(<ArtistQuestionScreen
     onAnswer={onAnswer}
     question={question}
+    renderPlayer={() => {}}
   />);
 
-  const answerInputs = screen.find(`input`);
+  const answerInputs = screen.find(`input.artist__input`);
   const answerOne = answerInputs.at(0);
 
   answerOne.simulate(`change`, mockEvent);
