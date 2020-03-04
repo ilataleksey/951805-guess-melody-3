@@ -1,4 +1,4 @@
-export default [
+export const questions = [
   {
     type: `genre`,
     genre: `rock`,
