@@ -10,7 +10,7 @@ const initialState = {
 };
 
 const ActionType = {
-  INCREMENT_MISTAKES: `INCREMENT_MISTAKES`,
+  CHECK_FOR_MISTAKE: `CHECK_FOR_MISTAKE`,
   INCREMENT_STEP: `INCREMENT_STEP`,
 };
 
@@ -30,7 +30,7 @@ const ActionCreator = {
     payload: 1,
   }),
 
-  incrementMistake: (question, userAnswer) => {
+  checkForMistake: (question, userAnswer) => {
     let answerIsCorrect = false;
 
     switch (question.type) {
@@ -43,7 +43,7 @@ const ActionCreator = {
     }
 
     return {
-      type: ActionType.INCREMENT_MISTAKES,
+      type: ActionType.CHECK_FOR_MISTAKE,
       payload: answerIsCorrect ? 0 : 1,
     };
   },
@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) => {
         step: nextStep,
       });
 
-    case ActionType.INCREMENT_MISTAKES:
+    case ActionType.CHECK_FOR_MISTAKE:
       const mistakes = state.mistakes + action.payload;
 
       if (mistakes >= state.maxMistakes) {
