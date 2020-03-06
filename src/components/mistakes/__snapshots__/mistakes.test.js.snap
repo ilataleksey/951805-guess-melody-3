@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should Mistakes render correctly With one one count 1`] = `
+exports[`Should Mistakes render correctly With one mistake 1`] = `
 <div
   className="game__mistakes"
 >
@@ -10,7 +10,7 @@ exports[`Should Mistakes render correctly With one one count 1`] = `
 </div>
 `;
 
-exports[`Should Mistakes render correctly With one zero count 1`] = `
+exports[`Should Mistakes render correctly With zero mistakes 1`] = `
 <div
   className="game__mistakes"
 />

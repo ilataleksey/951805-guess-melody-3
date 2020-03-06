@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import Mistakes from "./mistakes.jsx";
 
 describe(`Should Mistakes render correctly`, () => {
-  it(`With one zero count`, () => {
+  it(`With zero mistakes`, () => {
     const tree = renderer
       .create(<Mistakes
         count={0}
@@ -13,7 +13,7 @@ describe(`Should Mistakes render correctly`, () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it(`With one one count`, () => {
+  it(`With one mistake`, () => {
     const tree = renderer
       .create(<Mistakes
         count={1}
