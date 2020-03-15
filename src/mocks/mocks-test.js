@@ -1,4 +1,4 @@
-export default [
+export const questions = [
   {
     type: `genre`,
     genre: `rock`,
@@ -22,13 +22,13 @@ export default [
       src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
     },
     answers: [{
-      picture: `https://api.adorable.io/avatars/128/1`,
+      picture: `https://api.adorable.io/avatars/128/A`,
       artist: `John Snow`,
     }, {
-      picture: `https://api.adorable.io/avatars/128/2`,
+      picture: `https://api.adorable.io/avatars/128/AB`,
       artist: `Jack Daniels`,
     }, {
-      picture: `https://api.adorable.io/avatars/128/3`,
+      picture: `https://api.adorable.io/avatars/128/AC`,
       artist: `Jim Beam`,
     }],
   },
